@@ -144,18 +144,17 @@
             <div class="grid vertical-align">
               <div class="column">
                 <h3><strong>API를 활용하여 게임데이터 불러오기</strong></h3>
-                <p class="text-intro">API key를 할당받고, Requests() 메소도와 json을 활용하여 선수들의 게임 데이터를 불러옵니다. </p>
-                <p> 정규 게임리그에는 10팀이 존재하지만, 해당 프로젝트에서는 <strong>Gen.G, T1, Hanhwa</strong> 3팀의 선수 데이터만 활용했습니다.</p>
+                <p class="text-intro">API key를 할당받고, Requests() Module과 json을 활용하여 선수들의 게임 데이터를 불러옵니다. </p>
+                <p> 정규 게임리그에는 10팀이 존재하지만, \n 해당 프로젝트에서는 <strong>Gen.G, T1, Hanhwa</strong> 3팀의 선수 데이터만 활용했습니다.</p>
               </div>
               <!-- .end .column -->
               <div class="column">
                 <pre>header = {"X-Riot-Token" : api_key}
 def match_ids(puuid, start, count):
-    url = f"https://asia.api.riotgames.com/lol/match"
-
+    url = f"https://asia.api.riotgames.com"
     return requests.get(url, headers=header)
+                  
 req = match_ids(Lehends_puuid, 0, 100)
-
 if req.status_code == 200:
     match_id_data = req.json()
 </pre>
